@@ -35,13 +35,26 @@ forexample:
 if needed update migration call: sudo docker exec -it project-web-1 python /code/manage.py makemigrations
                                   sudo docker exec -it project-web-1 python /code/manage.py migrate 
 
-USE
+USE tables
 
-  use the GET request and url http://your_host:80/table/  for get all tables
+  use the GET request and url http://your_host:80/app/table/  for get all tables
 
-  use the DELETE request and url http://your_host:80/table/create/<id> for delete the table from database where id - table's id
+  use the DELETE request and url http://your_host:80/app/table/create/<id> for delete the table from database where id - table's id
 
-  use the POST request and url http://your_host:80/table/create/ for add the new table. the post request must have the new table's data, 
+  use the POST request and url http://your_host:80/app/table/create/ for add the new table. the post request must have the new table's data, 
+  {"name": "table's name", "seats":"number, how muth person can seats", "location":"table's location"}, for example { "name":"table 1", "seats": 4, "location":"the table is nearby the window" }
+
+USE reservation
+
+    use the GET request with key rezerv=True and url http://your_host:80/app/reserve/  for get all tables, forexample http://your_host:80/app/reserve/?rezerv=True
+
+    use the DELETE request and url http://your_host:80/app/reserve/<id> for delete the reserve from database where id - reserve's id
+
+    use the POST request and url http://your_host:80/app/table/create/ for add the new reserve. the post request must have the new reserve's data,
+    {  "customer_name": "Джонни Си",
+        "table_id": "3",
+        "reservation_time": "2025-04-19T06:30:00+10:00",
+            "duration_minutes": 60 }  
 
 
   
