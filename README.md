@@ -51,10 +51,9 @@ USE reservation
     use the DELETE request and url http://your_host:80/app/reserve/<id> for delete the reserve from database where id - reserve's id
 
     use the POST request and url http://your_host:80/app/table/create/ for add the new reserve. the post request must have the new reserve's data,
-    {  "customer_name": "Джонни Си",
-        "table_id": "3",
-        "reservation_time": "2025-04-19T06:30:00+10:00",
-            "duration_minutes": 60 }  
+    {  "customer_name": "costomer's name","table_id": "table's id who get reservation", "reservation_time": "date and time reservation in format YYYY-MM-DDThh:mm:ss+UTC", "duration_minutes": minuts how long will be reservation }  forexample  { "customer_name": "Джонни Си", "table_id": "3", "reservation_time": "2025-04-19T06:30:00+10:00", "duration_minutes": 60 } 
+    if the post request will be susses you get answer with your request reservation else you get error answer for example you try made reservation on table who already have reservation on this time or you lost any fild in reques 
+    
 
 
   
